@@ -1,4 +1,5 @@
 import seroglazov.arrays.ReArrange;
+import seroglazov.lists.SinglyList;
 
 public class Main {
 
@@ -21,8 +22,12 @@ public class Main {
         //int secondMaximumItem = SecondMaximumElement.findSecondMaximumItem(input);
         //CheckRotateArray.rotateArray(input);
 
-        int[] checkInput = {10, -1, 20, 4, 5, -9, -6};
-        int[] checkInput2 = {10, -1, 5, 6, -8, -4, -5};
-        ReArrange.reArrange(checkInput2);
+        //int[] checkInput = {10, -1, 20, 4, 5, -9, -6};
+        //int[] checkInput2 = {10, -1, 5, 6, -8, -4, -5};
+        // ReArrange.reArrange(checkInput2);
+
+        final SinglyList<Integer> list = new SinglyList<>();
+        list.insertAtEnd(0);
+        list.insertAtEnd(1);
     }
 }
