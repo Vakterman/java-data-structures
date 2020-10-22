@@ -1,5 +1,7 @@
 package seroglazov.arrays;
 
+import static seroglazov.arrays.ArrayUtils.swap;
+
 public class ReArrange {
 	public static void reArrange(int[] arr) {
 		//Write - Your - Code
@@ -15,7 +17,6 @@ public class ReArrange {
 				} else {
 					right --;
 				}
-
 			}  else if(arr[right] < 0){
 				if(arr[left] >= 0) {
 					swap(arr, left, right);
@@ -31,9 +32,5 @@ public class ReArrange {
 		}
 	}
 
-	private static void swap(int[] arr, int left, int right){
-		int tmp = arr[left];
-		arr[left] = arr[right];
-		arr[right] = tmp;
-	}
+
 }

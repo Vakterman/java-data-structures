@@ -29,7 +29,13 @@ public class Main {
         final SinglyList<Integer> list = new SinglyList<>();
         list.insertAtEnd(0);
         list.insertAtEnd(1);
-
-        list.insertAfter(2, 4);
+        list.insertAtEnd(2);
+        list.insertAtEnd(5);
+        System.out.println(list.toString());
+        list.delete(2);
+        System.out.println(list.toString());
+        list.delete(0);
+        System.out.println(list.toString());
+        list.delete(5);
     }
 }
