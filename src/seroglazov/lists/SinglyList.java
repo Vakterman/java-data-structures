@@ -1,5 +1,7 @@
 package seroglazov.lists;
 
+import java.util.NoSuchElementException;
+
 public class SinglyList<T> {
     public static class ListNode<T> {
         private ListNode<T> nextNode;
@@ -23,7 +25,7 @@ public class SinglyList<T> {
 
     public ListNode<T> getHead() { return head; }
 
-    public void insertAtEnd(T data){
+    public void insertAtEnd(final T data){
 
         if(head == null) {
             head = new ListNode<>(data);
@@ -34,7 +36,40 @@ public class SinglyList<T> {
                 nodeForInsertion = nodeForInsertion.nextNode;
             }
 
-            nodeForInsertion.nextNode = new ListNode<>(data);
+            insertAt(data, nodeForInsertion);
         }
+    }
+
+    private void insertAt(T data, ListNode<T> node) {
+        node.nextNode = new ListNode<>(data);
+    }
+
+    public void insertAfter(final T data, final T previousData) {
+          final ListNode<T> previousNode =  searchNode(previousData);
+          if(previousNode == null){
+              throw new NoSuchElementException();
+          }
+
+          insertAt(data, previousNode);
+    }
+
+    public boolean search(final T data) {
+        ListNode<T> node = searchNode(data);
+        return node != null ;
+    }
+
+    private ListNode<T> searchNode(final T data) {
+        if(head != null) {
+            ListNode<T> node = head;
+            while(node != null) {
+                if(node.getData().equals(data)) {
+                    return node;
+                }
+
+                node = node.nextNode;
+            }
+        }
+
+        return null;
     }
 }

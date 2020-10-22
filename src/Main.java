@@ -29,5 +29,7 @@ public class Main {
         final SinglyList<Integer> list = new SinglyList<>();
         list.insertAtEnd(0);
         list.insertAtEnd(1);
+
+        list.insertAfter(2, 4);
     }
 }
