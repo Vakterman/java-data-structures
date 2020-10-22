@@ -91,6 +91,18 @@ public class SinglyList<T> {
         return null;
     }
 
+    public void deleteAtHead() {
+        if(head == null) {
+            return;
+        }
+
+        if(head.nextNode != null) {
+            head = head.nextNode;
+        } else {
+            head = null;
+        }
+    }
+
     public boolean delete(final T data) {
         if(head ==  null) {
             return false;

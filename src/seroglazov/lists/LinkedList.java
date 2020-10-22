@@ -59,6 +59,8 @@ public class LinkedList<T> implements Iterable<T> {
 		size++;
 	}
 
+	public boolean isEmpty() { return head == null;}
+	
 	private int getSize() {
 		return size;
 	}

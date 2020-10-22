@@ -31,6 +31,15 @@ public class Main {
         list.insertAtEnd(1);
         list.insertAtEnd(2);
         list.insertAtEnd(5);
+
+        System.out.println(list.toString());
+        // test delete head
+        list.deleteAtHead();
+        System.out.println(list.toString());
+        list.deleteAtHead();
+        System.out.println(list.toString());
+
+        // test delete
         System.out.println(list.toString());
         list.delete(2);
         System.out.println(list.toString());
