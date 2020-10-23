@@ -1,6 +1,7 @@
 package seroglazov.lists;
 
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 public class SinglyList<T> {
     private int size = 0;
@@ -20,6 +21,10 @@ public class SinglyList<T> {
 
         public ListNode<T> getNextNode() {
             return nextNode;
+        }
+
+        public void setNextNode(final ListNode<T> nextNode) {
+            this.nextNode = nextNode;
         }
     }
 
@@ -144,8 +149,8 @@ public class SinglyList<T> {
         return null;
     }
 
-    @Override
-    public String toString() {
+
+    public String listToString() {
         final StringBuilder stringBuilder = new StringBuilder();
         ListNode<T> tmp = head;
         stringBuilder.append("[");
@@ -165,5 +170,40 @@ public class SinglyList<T> {
         stringBuilder.append("]");
 
         return stringBuilder.toString();
+    }
+
+    public boolean isEmpty() {
+        return head == null;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SinglyList)) return false;
+        SinglyList<?> that = (SinglyList<?>) o;
+        if(size != that.size) {
+            return false;
+        }
+        ListNode<?> sourceNode = head;
+        ListNode<?> thatNode = that.getHead();
+        while(sourceNode != null  && thatNode != null) {
+            if(sourceNode.getData().equals(thatNode.getData())) {
+                return false;
+            }
+
+            sourceNode = sourceNode.getNextNode();
+            thatNode   = thatNode.getNextNode();
+        }
+
+        return sourceNode == null && thatNode == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(size, head);
+    }
+
+    public int getSize() {
+        return size;
     }
 }

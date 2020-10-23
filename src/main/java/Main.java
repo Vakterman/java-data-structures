@@ -1,4 +1,7 @@
+import seroglazov.ListUtils;
 import seroglazov.arrays.ReArrange;
+import seroglazov.lists.DoublyLinkedList;
+import seroglazov.lists.LinkedList;
 import seroglazov.lists.SinglyList;
 
 public class Main {
@@ -26,7 +29,7 @@ public class Main {
         //int[] checkInput2 = {10, -1, 5, 6, -8, -4, -5};
         // ReArrange.reArrange(checkInput2);
 
-        final SinglyList<Integer> list = new SinglyList<>();
+       /* final SinglyList<Integer> list = new SinglyList<>();
         list.insertAtEnd(0);
         list.insertAtEnd(1);
         list.insertAtEnd(2);
@@ -45,6 +48,29 @@ public class Main {
         System.out.println(list.toString());
         list.delete(0);
         System.out.println(list.toString());
-        list.delete(5);
+        list.delete(5);*/
+
+//        final DoublyLinkedList<Integer> lists = new DoublyLinkedList<>();
+//        lists.insertAtHead(1);
+//        lists.insertAtHead(5);
+        final SinglyList<Integer> linkedList = new SinglyList<>();
+        linkedList.insertAtEnd(1);
+        linkedList.insertAtEnd(2);
+        linkedList.insertAtEnd(3);
+        ListUtils.reverse(linkedList);
+
+        final SinglyList<Integer> firstLinkedList = new SinglyList<>();
+        final SinglyList<Integer> secondLinkedList = new SinglyList<>();
+        firstLinkedList.insertAtEnd(22);
+        firstLinkedList.insertAtEnd(12);
+        firstLinkedList.insertAtEnd(3);
+        secondLinkedList.insertAtEnd(1);
+        secondLinkedList.insertAtEnd(22);
+        secondLinkedList.insertAtEnd(5);
+
+        final SinglyList<Integer> intersection =
+                ListUtils.intersection(firstLinkedList, secondLinkedList);
+
+        final SinglyList<Integer> union = ListUtils.union(firstLinkedList, secondLinkedList);
     }
 }

@@ -60,7 +60,7 @@ public class LinkedList<T> implements Iterable<T> {
 	}
 
 	public boolean isEmpty() { return head == null;}
-	
+
 	private int getSize() {
 		return size;
 	}
